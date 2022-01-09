@@ -1,0 +1,236 @@
+@-webkit-keyframes border {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  25% {
+    width: 100%;
+    height: 0;
+  }
+  50% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes border {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  25% {
+    width: 100%;
+    height: 0;
+  }
+  50% {
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@-webkit-keyframes borderColor {
+  0% {
+    border-bottom-color: #60daaa;
+    border-left-color: #60daaa;
+  }
+  50% {
+    border-bottom-color: #60daaa;
+    border-left-color: #60daaa;
+  }
+  51% {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  100% {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+}
+
+@keyframes borderColor {
+  0% {
+    border-bottom-color: #60daaa;
+    border-left-color: #60daaa;
+  }
+  50% {
+    border-bottom-color: #60daaa;
+    border-left-color: #60daaa;
+  }
+  51% {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  100% {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+}
+
+* {
+  margin: 0 auto;
+}
+
+html {
+  font-family: 'raleway', sans-serif;
+  color: white;
+  font-size: 10px;
+}
+
+.flex-center, .god-cards > .card, .god-cards > .card .card-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.god {
+  padding: 2rem;
+  background-image: url(https://img.wallpapersafari.com/desktop/1366/768/18/41/v6CFYu.jpg);
+  background-position: center;
+}
+
+.god > header > h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.god-description {
+  font-size: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.god-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.god-cards > .card {
+  width: 100%;
+  background-color: #151c20;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.5rem 1rem;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  margin: 0.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.god-cards > .card:hover {
+  -webkit-transform: translateY(-2rem);
+          transform: translateY(-2rem);
+}
+
+.god-cards > .card:hover::before, .god-cards > .card:hover::after {
+  content: '';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+.god-cards > .card:hover::before {
+  top: 0;
+  left: 0;
+  border-top-color: #60daaa;
+  border-right-color: #60daaa;
+  -webkit-animation: border 2s infinite;
+          animation: border 2s infinite;
+}
+
+.god-cards > .card:hover::after {
+  bottom: 0;
+  right: 0;
+  -webkit-animation: border 2s 1s infinite, borderColor 2s 1s infinite;
+          animation: border 2s 1s infinite, borderColor 2s 1s infinite;
+}
+
+@media (min-width: 41em) {
+  .god-cards > .card {
+    width: 45%;
+  }
+}
+
+@media (min-width: 64em) {
+  .god-cards > .card {
+    width: 20%;
+  }
+}
+
+.god-cards > .card .card-img {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.god-cards > .card .card-img > img {
+  width: 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 3/4;
+}
+
+.god-cards > .card .card-name {
+  font-size: 1.8rem;
+}
+
+.god-cards > .card .card-info {
+  font-size: 1.4rem;
+  margin: 2rem 1rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 64em) {
+  .god {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+#selected-card {
+  position: fixed;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  color: black;
+  background-color: white;
+}
+
+@media (min-width: 64em) {
+  #selected-card {
+    font-size: 3rem;
+    color: white;
+    background-color: transparent;
+  }
+}
+/*# sourceMappingURL=style.css.map */
